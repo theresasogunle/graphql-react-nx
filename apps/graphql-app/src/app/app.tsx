@@ -1,10 +1,11 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import { SetForm, SetList } from '@nx-apollo-react-example/feature-sets';
-import ApolloClient from 'apollo-boost';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import './app.css';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3333/graphql',
+  cache: new InMemoryCache(),
 });
 
 const App = () => (
